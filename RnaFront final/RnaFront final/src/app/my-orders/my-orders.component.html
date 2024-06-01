@@ -1,0 +1,44 @@
+<app-navbar></app-navbar>
+
+<div class="content-wrapper">
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+  
+  <div *ngIf="orders.length > 0; else noOrders">
+    <table class="order-table">
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Somme Total</th>
+          <th>Date de L'ordre</th>
+          <th>Produits Commander</th>
+          <th>état</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders" class="order">
+          <td>{{ order.orderId }}</td>
+          <td>{{ order.totalAmount | currency: 'TND' }}</td> <!-- Change currency to TND -->
+          <td>{{ order.orderDate | date:'medium' }}</td>
+          <td>
+            <ul>
+              <li *ngFor="let item of order.orderItems">
+                {{ item.productName }} - Quantity: {{ item.quantity }} - Price: {{ item.price | currency: 'TND' }} <!-- Change currency to TND -->
+              </li>
+            </ul>
+          </td>
+          <td>
+            <!-- Display the order action as plain text -->
+            <div>{{ order.action }}</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <ng-template #noOrders>
+    <p>No orders found.</p>
+  </ng-template>
+</div>

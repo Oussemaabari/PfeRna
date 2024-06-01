@@ -1,0 +1,108 @@
+body {
+    background-color: #f5f5f5;
+}
+
+.content-wrapper {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.statContainer {
+    margin: auto;
+    width: 960px;
+}
+
+.statBubbleContainer {
+    width: 200px; /* Increased width */
+    height: 300px; /* Increased height */
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    margin: auto;
+    margin-top: 50px;
+    display: inline-block;
+    margin-left: 36px;
+    margin-right: 36px;
+}
+
+.totalOrders, .totalRevenue, .averageOrderValue {
+    font-family: 'Segoe UI Bold', Arial; /* Use a bold font */
+    color: #2b2b2b; /* Darker color */
+    font-weight: bold; /* Increase font weight */
+}
+
+.statBubbleContainer h3 {
+    font-family: 'Segoe UI Bold', Arial;
+    font-size: 14px; /* Decreased font size */
+    color: #828282;
+    margin-top: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.statBubbleContainer:hover > h3 {
+    color: #0e76bc;
+}
+
+.statBubbleContainer:hover > .statBubble {
+    border: 6px solid #0e76bc;
+    background-position: center -140px;
+}
+
+.statBubbleContainer:hover .statNum {
+    color: #2b2b2b;
+}
+
+.statBubble {
+    margin: auto;
+    width: 180px; /* Increased width */
+    height: 180px; /* Increased height */
+    border-radius: 100%;
+    border: 6px solid #ddd;
+    background-repeat: no-repeat;
+    background-position: center 25px;
+    position: relative;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.statNum {
+    font-family: 'Segoe UI Light', Arial;
+    font-size: 24px; /* Initial font size */
+    color: #828282;
+    transition: all 0.3s ease-in-out;
+    word-wrap: break-word;
+}
+
+.details-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #0e76bc;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.details-button:hover {
+    background-color: #094a8f;
+}
+
+.totalOrders {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/5220/5220625.png'); /* Update the icon URL */
+    background-size: contain; /* Ensure the icon fits within the bubble */
+}
+
+.totalRevenue {
+    background-image: url('https://image.pngaaa.com/362/5390362-small.png'); /* Update the icon URL */
+    background-size: contain; /* Ensure the icon fits within the bubble */
+}
+
+.averageOrderValue {
+    background-image: url('https://cdn-icons-png.flaticon.com/512/11472/11472701.png'); /* Update the icon URL */
+    background-size: contain; /* Ensure the icon fits within the bubble */
+}

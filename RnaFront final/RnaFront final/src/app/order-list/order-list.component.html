@@ -1,0 +1,51 @@
+<app-navbar></app-navbar>
+
+<div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+  
+  <div *ngIf="orders.length > 0; else noOrders">
+    <table class="order-table">
+      <thead>
+        <tr>
+          <th>ID ordre</th>
+          <th>ID client</th>
+          <th>Somme Total</th>
+          <th>Date de L'ordre</th>
+          <th>état</th>
+          <th>Produits Commander</th>
+          <th>mettre à jour</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders" class="order">
+          <td>{{ order.orderId }}</td>
+          <td>{{ order.userId }}</td>
+          <td>{{ order.totalAmount | currency: 'TND' }}</td> <!-- Change currency to TND -->
+          <td>{{ order.orderDate | date:'medium' }}</td>
+          <td>
+            <select [(ngModel)]="order.action">
+              <option value="commande en cours de traitement">Commande en cours de traitement</option>
+              <option value="en cours de livraison">En cours de livraison</option>
+              <option value="livrer">Livrer</option>
+            </select>
+          </td>
+          <td>
+            <ul>
+              <li *ngFor="let item of order.orderItems">
+                {{ item.productName }} - Quantity: {{ item.quantity }} - Price: {{ item.price | currency: 'TND' }} <!-- Change currency to TND -->
+              </li>
+            </ul>
+          </td>
+          <td>
+            <button (click)="updateOrderAction(order)">Validé</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <ng-template #noOrders>
+    <p>Pas D'ordre</p>
+  </ng-template>
+  

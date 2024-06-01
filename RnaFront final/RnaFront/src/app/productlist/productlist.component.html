@@ -1,0 +1,59 @@
+<app-navbar></app-navbar>
+<div class="main">
+  <h1>Liste des produits</h1>
+  <button title="Add" class="cssbuttons-io-button" (click)="addProduct()">AJOUTER PRODUIT</button> <br>
+
+  <div>
+    <input class="input" placeholder="Minimum Price" type="number" [(ngModel)]="minPrice" id="minPrice">
+    <input class="input" placeholder="Maximum Price" type="number" [(ngModel)]="maxPrice" id="maxPrice">
+    <button class="btnfilt" (click)="filterProductsByPrice()">Apply Filter<span class="span-mother"></span></button>
+  </div>
+
+  <table class="table">
+    <!-- Table headers -->
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Image</th>
+        <th>Availability</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <!-- Table body -->
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.quantity }}</td>
+        <td>
+          <img [src]="product.imageUrl" alt="Product Image" style="max-width: 100px; max-height: 100px;">
+        </td>
+        <td>
+          <span *ngIf="product.quantity > 0; else outOfStock">Available</span>
+          <ng-template #outOfStock>Hors Stock</ng-template>
+        </td>
+        <td>
+          <button class="delete-button" (click)="deleteProduct(product.id)">Delete</button>
+          <button class="update-button" (click)="navigateToUpdateProduct(product.id)">Update</button>
+          <button class="action-button" (click)="addToWishlist(product)">Add to Wishlist</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Wishlist Section -->
+  <div class="wishlist">
+    <h2>Wishlist</h2>
+    <ul>
+      <li *ngFor="let item of wishlist">
+        {{ item.productName }} - {{ item.quantity }} x {{ item.price }} = {{ item.totalPrice }}
+      </li>
+    </ul>
+    <div>Total Amount: {{ totalAmount }}</div>
+    <button class="order-button" (click)="placeOrder()">Place Order</button>
+  </div>
+</div>

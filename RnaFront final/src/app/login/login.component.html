@@ -1,0 +1,28 @@
+<div class="background-container">
+  <div class="container">
+    <div class="heading">Sign In</div>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form">
+      <input formControlName="email" class="input" type="email" name="email" id="email" placeholder="E-mail" autocomplete="on">
+      <div *ngIf="loginForm.get('email')?.errors?.['required'] && loginForm.get('email')?.touched" class="error-message">
+        Email is required
+      </div>
+      <div *ngIf="loginForm.get('email')?.errors?.['email'] && loginForm.get('email')?.touched" class="error-message">
+        Please enter a valid email address
+      </div>
+      <input formControlName="password" class="input" type="password" name="password" id="password" placeholder="Password">
+      <div *ngIf="loginForm.get('password')?.errors?.['required'] && loginForm.get('password')?.touched" class="error-message">
+        Password is required
+      </div>
+      
+      <!-- Loader SVG -->
+      <div *ngIf="loading" id="loader" class="loader">
+        <svg viewBox="25 25 50 50">
+          <circle r="20" cy="50" cx="50"></circle>
+        </svg>
+      </div>
+      
+      <input class="login-button" [disabled]="loginForm.invalid || loading" type="submit" value="Sign In">
+      <span class="forgot-password"><a href="../forgot-password/">Forgot Password ?</a></span>
+    </form>
+  </div>
+</div>

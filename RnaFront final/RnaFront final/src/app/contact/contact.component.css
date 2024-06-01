@@ -1,0 +1,61 @@
+body {
+  height: 100%; /* Ensure body fills the entire viewport height */
+  margin: 0;
+  padding: 0;
+  background-image: url(./alcool.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Keeps the background fixed while scrolling */
+}
+
+.container {
+  max-width: 800px;
+  margin: 80px auto 20px; /* Added 80px margin to the top */
+  padding: 40px; /* Increased padding to make the container bigger */
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 30px; /* Increased margin between form groups */
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 15px; /* Increased padding for input fields */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.btn {
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+.preload-background {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  background-image: url(./alcool.jpg);
+}

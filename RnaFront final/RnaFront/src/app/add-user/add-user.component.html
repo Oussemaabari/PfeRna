@@ -1,0 +1,63 @@
+
+<app-navbar></app-navbar>
+<router-outlet></router-outlet>
+<div class="container">
+  <form class="form" *ngIf="addUserForm" [formGroup]="addUserForm" (ngSubmit)="onSubmit()">
+
+      <label for="email">
+        <input class="input"type="email" id="email" placeholder="Votre email" formControlName="email" required="">
+        <div *ngIf="addUserForm.get('email')?.invalid && addUserForm.get('email')?.touched">
+          <div *ngIf="addUserForm.get('email')?.errors?.['required']" class="error-message">Email is required</div>
+        </div>
+      </label>
+
+      <label for="password">
+        <input class="input"type="password" id="password" placeholder="Votre password" formControlName="password" required="">
+        <div *ngIf="addUserForm.get('password')?.invalid && addUserForm.get('password')?.touched">
+          <div *ngIf="addUserForm.get('password')?.errors?.['required']" class="error-message">Password is required</div>
+        </div>
+      </label>
+      <label for="role">
+        <input class="input"type="role" id="role" placeholder="Votre role" formControlName="role" required="">
+        <div *ngIf="addUserForm.get('role')?.invalid && addUserForm.get('role')?.touched">
+          <div *ngIf="addUserForm.get('role')?.errors?.['required']" class="error-message">role is required</div>
+        </div>
+      </label>
+
+<label for="nom">
+  <input class="input"type="text" id="nom" placeholder="Votre nom" formControlName="nom" required="">
+  <div *ngIf="addUserForm.get('nom')?.invalid && addUserForm.get('nom')?.touched">
+    <div *ngIf="addUserForm.get('nom')?.errors?.['required']" class="error-message">Nom is required</div>
+  </div>
+</label>
+
+<label for="prenom">
+  <input class="input" type="text" id="prenom" placeholder="Votre prenom" formControlName="prenom" required="">
+  <div *ngIf="addUserForm.get('prenom')?.invalid && addUserForm.get('prenom')?.touched">
+    <div *ngIf="addUserForm.get('prenom')?.errors?.['required']" class="error-message">Prenom is required</div>
+  </div>
+</label>
+
+      <label for="tel">
+        <input class="input"type="tel" id="tel" placeholder="Votre tel" formControlName="tel" required="">
+        <div *ngIf="addUserForm.get('tel')?.invalid && addUserForm.get('tel')?.touched">
+          <div *ngIf="addUserForm.get('tel')?.errors?.['required']" class="error-message">Tel is required</div>
+        </div>
+      </label>
+<br><br><br><br>
+
+    <div class="form-group">
+      <button class="button" type="submit">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 20 20" height="20" fill="none" class="svg-icon">
+          <g stroke-width="1.5" stroke-linecap="round" stroke="#de8a2a">
+            <circle r="7.5" cy="10" cx="10"></circle>
+            <path d="m9.99998 7.5v5"></path>
+            <path d="m7.5 9.99998h5"></path>
+          </g>
+        </svg>
+        <span class="lable">Ajouter client</span>
+      </button>
+    </div>
+  </form>
+</div>
+

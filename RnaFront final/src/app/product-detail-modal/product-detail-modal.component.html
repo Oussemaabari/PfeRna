@@ -1,0 +1,35 @@
+<div class="modal-overlay">
+  <div class="modal-container">
+    <h3>Edit Product</h3>
+    <form [formGroup]="productForm" (ngSubmit)="updateProductInfo()">
+      <div>
+        <label>
+          <strong>ID:</strong>
+          <input [value]="data.id" disabled />
+        </label>
+      </div>
+      <div>
+        <label>
+          <strong>Name:</strong>
+          <input formControlName="name" />
+        </label>
+      </div>
+      <div>
+        <label>
+          <strong>Price:</strong>
+          <input formControlName="price" />
+        </label>
+      </div>
+      <div>
+        <label>
+          <strong>Quantity:</strong>
+          <input formControlName="quantity" />
+        </label>
+      </div>
+      <div>
+        <button type="submit">Edit</button>
+        <button type="button" (click)="close()">Close</button>
+      </div>
+    </form>
+  </div>
+</div>

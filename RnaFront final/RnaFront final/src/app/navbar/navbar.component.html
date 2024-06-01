@@ -1,0 +1,67 @@
+<header class="nav">
+  <div class="logo">
+    <span class="logo-text">RNA</span>
+  </div>
+
+  <nav class="nav-middle">
+    <ul>
+      <li><a routerLink="/">Acceuil</a></li>
+      <li *ngIf="isAdmin"><a routerLink="/userslist">User List</a></li>
+      <li *ngIf="isAdmin"><a routerLink="/products">Products</a></li>
+      <li><a routerLink="/contact">Contactez nous</a></li>
+      <li><a routerLink="/order-list">Order List</a></li>
+      <li><a routerLink="/statistics">Statistics</a></li> <!-- New link to the statistics page -->
+      <li *ngIf="isUser" class="dropdown">
+        <a href="#">Nos activités</a>
+        <div class="dropdown-content">
+          <a href="/assets/activite.html">Activité</a><br>
+          <a href="/assets/nosclients.html">Nos Clients</a><br>
+          <a href="/assets/controle.html">Contrôle qualité</a><br>
+        </div>
+      </li>
+      <li *ngIf="isUser" class="dropdown">
+        <a href="#">Présentation </a>
+        <div class="dropdown-content">
+          <a href="/assets/informations.html">Informations générale sur la régie des Alcools</a><br>
+          <a href="/assets/loi.html">Loi de Création</a><br>
+          <a href="/assets/Organe.html">Organe de gestion</a><br>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
+  <nav class="nav-right">
+    <ul>
+      <li class="dropdown-container">
+        <a class="nav-link btn-profile">
+          <span>{{ userName }}</span>
+        </a>
+        <!-- Dropdown menu content -->
+        <div class="dropdown-menu profile-dropdown">
+          <a routerLink="/profile">
+            <svg viewBox="0 0 24 24" width="20" height="20">
+              <!-- SVG code -->
+            </svg>
+            <span>Edit profile</span>
+          </a>
+          <a href="#">
+            <svg viewBox="0 0 24 24" width="20" height="20">
+              <!-- SVG code -->
+            </svg>
+            <span>Send Feedback</span>
+          </a>
+          <a href="#" (click)="logout()">
+            <svg viewBox="0 0 24 24" width="20" height="20">
+              <!-- SVG code -->
+            </svg>
+            <span>Log out</span>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <!-- Main content goes here -->
+</main>

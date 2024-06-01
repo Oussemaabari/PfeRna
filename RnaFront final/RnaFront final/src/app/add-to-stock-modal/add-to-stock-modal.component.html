@@ -1,0 +1,52 @@
+<div class="modal-overlay">
+  <div class="modal-container">
+    <h3>Add Product to Stock</h3>
+    <form [formGroup]="addToStockForm" (ngSubmit)="addToStock()">
+      <div>
+        <label>
+          <strong>Quantity:</strong>
+          <input formControlName="quantity" type="number" />
+          <!-- Error message for quantity validation -->
+          <div *ngIf="addToStockForm.get('quantity')?.invalid && addToStockForm.get('quantity')?.dirty">
+            <div *ngIf="addToStockForm.get('quantity')?.errors?.['required']">Quantity is required.</div>
+            <div *ngIf="addToStockForm.get('quantity')?.errors?.['min']">Quantity must be greater than 0.</div>
+          </div>
+        </label>
+      </div>
+      <div>
+        <label>
+          <strong>Nom:</strong> 
+          <input formControlName="name" type="text" />
+          <!-- Error message for designation validation -->
+          <div *ngIf="addToStockForm.get('name')?.invalid && addToStockForm.get('name')?.dirty">
+            <div *ngIf="addToStockForm.get('name')?.errors?.['required']">Designation is required.</div>
+          </div>
+        </label>
+      </div>
+      <div>
+        <label>
+          <strong>Date:</strong> 
+          <input formControlName="date" type="date" />
+        </label>
+      </div>
+      <div>
+        <label>
+          <strong>Movement Type:</strong>
+          <select formControlName="movementType">
+            <option value="ENTREE">ENTREE</option>
+            <option value="SORTIE">SORTIE</option>
+          </select>
+          <!-- Error message for movement type validation -->
+          <div *ngIf="addToStockForm.get('movementType')?.invalid && addToStockForm.get('movementType')?.dirty">
+            <div *ngIf="addToStockForm.get('movementType')?.errors?.['required']">Movement type is required.</div>
+            <div *ngIf="addToStockForm.get('movementType')?.errors?.['pattern']">Invalid movement type.</div>
+          </div>
+        </label>
+      </div>
+      <div>
+        <button type="submit">Add to Stock</button>
+        <button type="button" (click)="close()">Close</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+
+<div class="content-wrapper">
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+
+  <div *ngIf="!errorMessage" class="statContainer">
+    <div class="statBubbleContainer">
+      <div class="statBubble totalOrders">
+        <div class="statNum">{{ totalOrders }}</div>
+      </div>
+      <h3>Total Orders</h3>
+    </div>
+
+    <div class="statBubbleContainer">
+      <div class="statBubble totalRevenue">
+        <div class="statNum">{{ totalRevenue | currency: 'TND' }}</div>
+      </div>
+      <h3>Total Revenue</h3>
+    </div>
+
+    <div class="statBubbleContainer">
+      <div class="statBubble averageOrderValue">
+        <div class="statNum">{{ averageOrderValue | currency: 'TND' }}</div>
+      </div>
+      <h3>Average Order Value</h3>
+    </div>
+
+    <button class="details-button" (click)="navigateToOrderList()">Details</button>
+  </div>
+</div>

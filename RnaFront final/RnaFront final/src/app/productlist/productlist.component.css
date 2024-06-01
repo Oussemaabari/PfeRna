@@ -1,0 +1,242 @@
+.button {
+  position: relative;
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid #34974d;
+  background-color: #3aa856;
+}
+
+.button, .button__icon, .button__text {
+  transition: all 0.3s;
+}
+
+.button .button__text {
+  transform: translateX(30px);
+  color: #fff;
+  font-weight: 600;
+}
+
+.button .button__icon {
+  position: absolute;
+  transform: translateX(109px);
+  height: 100%;
+  width: 39px;
+  background-color: #34974d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button .svg {
+  width: 30px;
+  stroke: #fff;
+}
+
+.button:hover {
+  background: #34974d;
+}
+
+.button:hover .button__text {
+  color: transparent;
+}
+
+.button:hover .button__icon {
+  width: 148px;
+  transform: translateX(0);
+}
+
+.button:active .button__icon {
+  background-color: #2e8644;
+}
+
+.button:active {
+  border: 1px solid #2e8644;
+}
+.titre {
+  position: relative;
+  text-align: center; /* Center the text horizontally */
+  color: #000; /* Black color for the text */
+  font-size: 2.5em; /* Adjust the font size as needed */
+  font-weight: bold; /* Make the text bold */
+  margin-top: 20px; /* Margin from the top */
+  margin-bottom: 20px; /* Margin from the bottom */
+  text-transform: uppercase; /* Uppercase text */
+  letter-spacing: 2px; /* Spacing between letters */
+  text-shadow: 2px 2px 4px rgba(88, 47, 47, 0.1); /* Subtle shadow for a 3D effect */
+  padding: 10px; /* Padding around the text */
+  border-radius: 8px; /* Rounded corners */
+}
+
+/* View button */
+.edit-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none !important;
+}
+
+.edit-svgIcon {
+  width: 17px;
+  transition-duration: 0.3s;
+}
+
+.edit-svgIcon path {
+  fill: white;
+}
+
+.edit-button:hover {
+
+  transition-duration: 0.3s;
+  background-color: rgb(255, 69, 69);
+}
+
+
+
+.edit-button:hover::before {
+  display: block;
+  padding-right: 10px;
+  font-size: 13px;
+  opacity: 1;
+  transform: translateY(0px);
+  transition-duration: 0.3s;
+}
+/*delete btn*/
+.delete-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.delete-svgIcon {
+  width: 15px;
+  transition-duration: 0.3s;
+}
+
+.delete-svgIcon path {
+  fill: white;
+}
+
+.delete-button:hover {
+ 
+  transition-duration: 0.3s;
+  background-color: rgb(255, 69, 69);
+
+}
+
+.delete-button:hover::before {
+  display: block;
+  padding-right: 10px;
+  font-size: 13px;
+  opacity: 1;
+  transform: translateY(0px);
+  transition-duration: 0.3s;
+}
+
+/*Min max */
+.input {
+  border: 2px solid transparent;
+  width: 15em;
+  height: 2.5em;
+  padding-left: 0.8em;
+  outline: none;
+  overflow: hidden;
+  background-color: #aaaaaa;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+
+.input:hover,
+.input:focus {
+  border: 2px solid #4A9DEC;
+  box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
+  background-color: white;
+}
+/*filter*/
+.btnfilt {
+  width: fit-content;
+  min-width: 100px;
+  height: 40px;
+  padding: 6px;
+  border-radius: 15px;
+  border: 2.5px solid #E0E1E4;
+  box-shadow: 0px 0px 20px -20px;
+  cursor: pointer;
+  background-color: white;
+  transition: all 0.2s ease-in-out 0ms;
+  user-select: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btnfilt:hover {
+  background-color: #47a378;
+  box-shadow: 0px 0px 20px -18px;
+}
+
+.btnfilt:active {
+  transform: scale(0.95);
+}
+.main {
+  margin-left: 20px; /* Same as the width of the sidebar */
+  margin-right: 20px; /* Same as the width of the sidebar */
+
+}
+.button2 {
+  border: none;
+  display: flex;
+  padding: 0.75rem 1.5rem;
+  background-color: #488aec;
+  color: #ffffff;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  align-items: center;
+  border-radius: 0.5rem;
+  user-select: none;
+  gap: 0.75rem;
+  box-shadow: 0 4px 6px -1px #488aec31, 0 2px 4px -1px #488aec17;
+  transition: all 0.6s ease;
+}
+
+.button2:hover {
+  box-shadow: 0 10px 15px -3px #488aec4f, 0 4px 6px -2px #488aec17;
+}
+
+.button2:focus,
+.button2:active {
+  opacity: 0.85;
+  box-shadow: none;
+}
+
+.button2 svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}

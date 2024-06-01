@@ -1,0 +1,248 @@
+.cssbuttons-io-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .2em;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 15px;
+  padding: .5em 1.5em;
+  color: white;
+  background: linear-gradient(0deg, rgb(0, 150, 60), rgb(100, 250, 150));
+  border: none;
+  outline: none;
+  border-bottom: 3px solid rgb(0, 130, 40);
+  box-shadow: 0 .5em .5em -.4em rgb(0, 0, 0, .5);
+  letter-spacing: 0.08em;
+  border-radius: 20em;
+  cursor: pointer;
+  transition: .5s;
+}
+.bin-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  border-radius: 15px;
+  background-color: rgb(255, 95, 95);
+  cursor: pointer;
+  border: 3px solid rgb(255, 201, 201);
+  transition-duration: 0.3s;
+}
+.bin-bottom {
+  width: 15px;
+}
+.bin-top {
+  width: 17px;
+  transform-origin: right;
+  transition-duration: 0.3s;
+}
+.bin-button:hover .bin-top {
+  transform: rotate(45deg);
+}
+.bin-button:hover {
+  background-color: rgb(255, 0, 0);
+}
+.bin-button:active {
+  transform: scale(0.9);
+}
+/* View button */
+.burger {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  cursor: pointer;
+  transition: 300ms;
+  border-radius: 10px;
+}
+.burger input[type="checkbox"] {
+  appearance: none;
+  transition: 300ms;
+}
+
+.burger::before,
+.burger::after {
+  content: "";
+  transition: 300ms;
+  transform-origin: center center;
+}
+
+.burger::before {
+  transform: translateY(8px);
+}
+.burger::after {
+  transform: translateY(-8px);
+}
+.burger .line,
+.burger::before,
+.burger::after {
+  width: 25px;
+  height: 2.1px;
+  display: block;
+  background-color: black;
+  border-radius: 5px;
+  position: absolute;
+}
+
+.burger .line:checked {
+  width: 0;
+  transition-delay: 100ms;
+}
+.burger:has(.line:checked)::before {
+  animation: animation1 400ms ease-out 0s 1 both;
+}
+.burger:has(.line:checked)::after {
+  animation: animation2 400ms ease-out 0s 1 both;
+}
+
+.burger:hover {
+  background: #aeaeae;
+  border-radius: 50%;
+}
+
+.burger:hover .line,
+.burger:hover::before,
+.burger:hover::after {
+  background: #e8e8e8;
+}
+
+.burger:active {
+  scale: 0.95;
+}
+@keyframes animation1 {
+  0% {
+    transform: translateY(8px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(45deg);
+  }
+}
+@keyframes animation2 {
+  0% {
+    transform: translateY(-8px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(-45deg);
+  }
+}
+/*sidebar*/
+body {
+  font-family: "Lato", sans-serif;
+  padding-top: 57px;
+}
+
+.sidenav {
+  height: calc(100% - 57px); /* Occupy full height of the viewport minus navbar height */
+  width: 250px;
+  position: fixed; /* Fixed position */
+  z-index: 1;
+  top: 57px; /* Adjust based on the height of your navbar */
+  left: 0;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  padding-top: 25px;
+}
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #000000;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #2500fa;
+}
+
+.main {
+  margin-left: 240px; /* Same as the width of the sidebar */
+  padding: 17px; /* Add padding to create space between sidebar and content */
+  font-size: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+/*Min max */
+.input {
+  border: 2px solid transparent;
+  width: 15em;
+  height: 2.5em;
+  padding-left: 0.8em;
+  outline: none;
+  overflow: hidden;
+  background-color: #aaaaaa;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+
+.input:hover,
+.input:focus {
+  border: 2px solid #4A9DEC;
+  box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
+  background-color: white;
+}
+/*filter*/
+.btnfilt {
+  width: fit-content;
+  min-width: 100px;
+  height: 40px;
+  padding: 6px;
+  border-radius: 15px;
+  border: 2.5px solid #E0E1E4;
+  box-shadow: 0px 0px 20px -20px;
+  cursor: pointer;
+  background-color: white;
+  transition: all 0.2s ease-in-out 0ms;
+  user-select: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btnfilt:hover {
+  background-color: #47a378;
+  box-shadow: 0px 0px 20px -18px;
+}
+
+.btnfilt:active {
+  transform: scale(0.95);
+}
+.main {
+  margin-left: 240px; /* Same as the width of the sidebar */
+  margin-top: 100px; /* Adjust this value based on the height of your navbar */
+  padding: 10px; /* Add padding to create space between sidebar and content */
+  font-size: 16px;
+}
+.delete-button {
+  padding: 8px 12px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: #d32f2f;
+}
+
+.delete-button:active {
+  transform: scale(0.95);
+}

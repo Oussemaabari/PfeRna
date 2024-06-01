@@ -1,0 +1,93 @@
+
+/* Alert */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif; /* Change font */
+  }
+  
+  .alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+  }
+  
+  /* Order Table */
+  .order-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Roboto', sans-serif; /* Change font */
+  }
+  
+  /* Table Header Styles */
+  .order-table th {
+    background-color: #f2f2f2; /* Header background color */
+    font-weight: bold;
+    text-align: left;
+    padding: 15px; /* Add some padding */
+    font-family: 'Roboto', sans-serif; /* Change font */
+  }
+  
+  /* Table Row Styles */
+  .order-table tbody tr {
+    background-color: #ffffff; /* Alternate row background color */
+  }
+  
+  /* Table Data Styles */
+  .order-table td {
+    padding: 15px; /* Add some padding */
+    border: none; /* Remove borders for table data */
+  }
+  
+  /* Hover Effect */
+  .order-table tbody tr:hover {
+    background-color: #f2f2f2; /* Hover background color */
+  }
+  
+  /* Select Dropdown */
+  .order-table td select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #fff;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif; /* Change font */
+  }
+  
+  /* Hover State */
+  .order-table td select:hover {
+    border-color: #007bff;
+  }
+  
+  /* Focus State */
+  .order-table td select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  /* Update Button */
+  .order-table td button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Roboto', sans-serif; /* Change font */
+  }
+  
+  .order-table td button:hover {
+    background-color: #0056b3;
+  }
+  .content-wrapper {
+  padding-top: 110px; /* Adjust the value as needed */
+}

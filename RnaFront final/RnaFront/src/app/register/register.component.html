@@ -1,0 +1,78 @@
+
+<div class="background-container">
+  <!-- Background content here -->
+
+<form class="form">
+  <p class="title">Register </p>
+  <p class="message">Signup now and get full access to our app. </p>
+  <div class="col-md-6">
+    <form *ngIf="registerForm" [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form">
+      <div class="flex">
+        <label>
+        <input type="text" id="nom" formControlName="nom" class="input"placeholder="votre nom">
+        <div *ngIf="registerForm.get('nom')?.invalid && registerForm.get('nom')?.touched" class="error-message">
+          <div *ngIf="registerForm.get('nom')?.errors?.['required']">Nom is required</div>
+        </div>
+      </label>
+      </div>
+
+      <div class="flex">
+        <label for="prenom">
+        <input type="text" id="prenom" formControlName="prenom" class="input" placeholder="votre prénom">
+        <div *ngIf="registerForm.get('prenom')?.invalid && registerForm.get('prenom')?.touched" class="error-message">
+          <div *ngIf="registerForm.get('prenom')?.errors?.['required']">Prenom is required</div>
+        </div>
+      </label>
+      </div>
+      <div class="flex">
+        <label>
+        <input type="email" id="email" formControlName="email" class="input"placeholder="votre email">
+        <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="error-message">
+          <div *ngIf="registerForm.get('email')?.errors?.['required']">Email is required</div>
+          <div *ngIf="registerForm.get('email')?.errors?.['email']">Invalid email format</div>
+        </div>
+      </label>
+      </div>
+
+      <div class="flex">
+        <label>
+        <input type="password" id="password" formControlName="password" class="input"placeholder="votre password">
+        <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="error-message">
+          <div *ngIf="registerForm.get('password')?.errors?.['required']">Password is required</div>
+          <div *ngIf="registerForm.get('password')?.errors?.['minlength']">Password must be at least 6 characters long</div>
+        </div>
+      </label>
+      </div>
+
+      <div class="flex">
+        <label for="tel">
+        <input type="tel" id="tel" formControlName="tel" class="input"placeholder="votre telephone">
+        <div *ngIf="registerForm.get('tel')?.invalid && registerForm.get('tel')?.touched" class="error-message">
+          <div *ngIf="registerForm.get('tel')?.errors?.['required']">Tel is required</div>
+          <div *ngIf="registerForm.get('tel')?.errors?.['minlength']">Tel must be at least 8 characters long</div>
+        </div>
+      </label>
+      </div>
+
+
+      <div class="flex">
+        <label>
+        <input type="text" id="role" formControlName="role" class="input"placeholder="votre role">
+        <div *ngIf="registerForm.get('role')?.invalid && registerForm.get('role')?.touched" class="error-message">
+          <div *ngIf="registerForm.get('role')?.errors?.['required']">Role is required</div>
+        </div>
+      </label>
+      </div>
+
+
+
+      <button type="submit" class="submit" [disabled]="registerForm.invalid">Submit</button>
+      <p class="signin">Already have an account? <a href="/login">Sign in</a></p>
+
+    </form>
+
+  </div>
+
+</form>
+
+</div>

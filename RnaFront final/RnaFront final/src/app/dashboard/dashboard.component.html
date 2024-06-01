@@ -1,0 +1,40 @@
+<app-navbar></app-navbar>
+
+<br> <br>
+<div class="main">
+  <h1 class="title title">Nos Produits</h1>
+  <br>
+  <div class="dashboard-container">
+    <div class="product-list">
+      <h2>Product List</h2>
+      <div class="product-grid">
+        <div *ngFor="let product of filteredProducts" class="product-card">
+          <header>
+            <a target="_blank" href="#">
+              <img [src]="product.imageUrl" alt="{{ product.name }}">
+            </a>
+            <h1>{{ product.name }}</h1>
+            <h2>{{ product.price }}TND</h2>
+          </header>
+          <div class="product-bio">
+            <p>{{ product.availability ? 'Available' : 'Out of stock' }}</p>
+            <button (click)="addToWishlist(product)">Wishlist</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wishlist">
+      <h2>Wishlist</h2>
+      <ul>
+        <li *ngFor="let item of wishlist">
+          <div class="wishlist-item">
+            <span>{{ item.productName }}</span>
+            <span>{{ item.quantity }} x</span>
+          </div>
+        </li>
+      </ul>
+      <div class="wishlist-total">Total: {{ calculateTotalAmount() }} TND</div>
+      <button class="order-button" (click)="placeOrder()">Place Order</button>
+    </div>
+    

@@ -1,0 +1,63 @@
+<div class="modal-overlay">
+  <div class="modal-container">
+    <h3>Edit user</h3>
+    <form [formGroup]="userForm" (ngSubmit)="updateUserInfo()">
+      <div>
+        <label>
+          <strong>ID:</strong>  
+          <input [value]="data.id" disabled />
+        </label>
+      </div>
+      <div>
+        <label>
+          <strong>Nom:</strong>
+          <input formControlName="nom" />
+        </label>
+      </div>
+      <div>
+        <label>
+          <strong>Prénom:</strong>
+          <input formControlName="prenom" />
+        </label>
+      </div>
+      <div>
+        <label>
+          <strong>Email:</strong>
+          <input formControlName="email" />
+        </label>
+      </div>
+      <div>
+        <label>
+          <strong>Tel:</strong>
+          <input formControlName="tel" />
+        </label>
+      </div>
+      <!-- Add typeClient field -->
+<div>
+  <label>
+    <strong>Type Client:</strong>
+    <select formControlName="typeClient">
+      <option value="">Select your typeClient</option>
+      <option value="Les parfumeurs">Les parfumeurs</option>
+      <option value="Les pharmaciens">Les pharmaciens</option>
+      <option value="Les entrepositaires">Les entrepositaires</option>
+      <option value="Autres industriels">Autres industriels</option>
+    </select>
+  </label>
+</div>
+
+      <div>
+        <label>
+          <strong>Role:</strong>
+          <select formControlName="role">
+            <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+          </select>
+        </label>
+      </div>
+      <div>
+        <button type="submit">Edit</button>
+        <button type="button" (click)="close()">Close</button>
+      </div>
+    </form>
+  </div>
+</div>
